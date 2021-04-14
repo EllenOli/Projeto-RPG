@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>RPG CORONA</title>
+
+
+
+   <style>
+      * {
+         font-family: Helvetica;
+         font-weight: 400;
+
+      }
+
+      #titulo {
+         color: #053052;
+         text-align: center;
+      }
+
+      #placar {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      #jogador {
+         position: relative;
+         flex-grow: 1;
+         border-radius: 5px;
+         width: 200px;
+         padding: 20px;
+         color: #fff;
+      }
+
+      #jogador {
+         background-image: url("/home/ellen/Documentos/Resilia/Projeto - RPG/cenario.jpg");
+         background-size: 100%;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         text-align: center;
+         font-family: Arial;
+         color: #053052
+      }
+
+      ul#jogador-escolha {
+         list-style: none;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+
+      }
+
+      ul#jogador-escolha li {
+         display: inline;
+
+      }
+
+      ul#jogador-escolha li a {
+         opacity: -2;
+      }
+
+      ul#jogador-escolha li a:hover {
+         opacity: 1;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="principal">
+      <h1 id="titulo">RPG CoronaVirus</h1>
+      <div id="placar">
+         <div id="jogador">
+            <h2>Bem-vindo ao RPG Corona</h2>
+      <p>Lute para <strong>permanecer vivo</strong> nesse Apocalipse pandêmico!</p>
+            <span id="jogador-pontos"></span>
+            
+            
+            <ul id="jogador-escolha">
+               <li><a id="jogador-escolha-1" onclick="jogar(1)"><img src="pessoa.jpg" width="900" height="400"></a></li>
+               <li><a id="jogador-escolha-2" onclick="jogar(2)"><img src="monstro.jpg" width="900" height="400"></a>
+               </li>
+               <li><a id="jogador-escolha-3" onclick="jogar(3)"><img src="medico.jpg" width="900" height="400"></a></li>
+            </ul>
+         </div>
+      </div>
+
+      <script>
+         alert("Clique em qualquer figura, para escolher seu jogador")
+         function jogar(escolha) {
+            
+            var inputPers = prompt("Escolha seu personagem: \n1 - para João Cidadão \n2 - para Covidão \n3 - para Médico")
+            if (inputPers == 1) {
+               alert("Você escolheu: João Cidadão");
+               jogador1();
+            }
+
+            else if (inputPers == 2) {
+               alert("Você escolheu: Covidão");
+               jogador2();
+            }
+            else if (inputPers == 3) {
+               alert("Você escolheu Médico");
+               jogador3();
+            }
+
+            else {
+               alert("Número inválido")
+            }
+
+         }
+
+         function jogador1() {
+            var decisaoJ = prompt("Usa máscara e álcool em gel?")
+            if (decisaoJ == "sim") {
+               var decisaoJ2 = prompt("Acredita em fakenews e que a Terra é plana?")
+               if (decisaoJ2 == "sim") {
+                  alert("Aeeee... boa 06! Foi carregado pelo Capeta, que fez questão de te mostrar que a Terra é redonda!")
+               }
+               else {
+                  window.location.href = "bau.html";
+               }
+
+
+
+            }
+            else {
+               window.location.href = "GameOver.html";
+               
+               
+               
+               
+            }
+         }
+
+         function jogador2() {
+            var decisaoV = prompt("Está em um local com muitas pessoas?")
+            if (decisaoV == "sim") {
+               var decisaoV2 = prompt("Os seres humanos estão fazendo uso de máscara de álcool em gel?")
+               if (decisaoV2 == "sim") {
+                  window.location.href = "tentedenovo.html"
+               }
+               else {
+                  alert("Well done! Você infectou e matou várias pessoas!");
+               }
+            }
+            else {
+               alert("Você foi derrotado!");
+            }
+         }
+
+         function jogador3() {
+            var decisaoM = prompt("Faz tratamento precoce com cloroquina?")
+            if (decisaoM == "não") {
+               var decisaoM2 = prompt("Acredita na eficácia da vacina?")
+               if (decisaoM2 == "sim") {
+                  window.location.href = "bau.html";
+               }
+               else {
+                  alert("Você matou todos os pacientes e morreu junto com eles!");
+               }
+            }
+            else {
+               alert("Matou todos os pacientes");
+            }
+         }
+
+      </script>
+</body>
+
+</html>
